@@ -8,7 +8,16 @@
         <element attributes="encode_utf8=false" label="Requester" mandatory="true" max_length="32" name="requester" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" display="true" label="Item" mandatory="true" max_length="125" name="item" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Display name" max_length="300" name="display_name" read_only="true" type="string"/>
-        <element default="0" label="Quantity" max_length="40" name="u_integer_2" type="integer"/>
+        <element choice="1" default="0" label="Quantity" max_length="40" name="u_integer_2" type="integer">
+            <choice>
+                <element inactive_on_update="false" label="8" sequence="4" value="8"/>
+                <element inactive_on_update="false" label="10" sequence="5" value="10"/>
+                <element inactive_on_update="false" label="2" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="0" sequence="0" value="0"/>
+                <element inactive_on_update="false" label="4" sequence="2" value="4"/>
+                <element inactive_on_update="false" label="6" sequence="3" value="6"/>
+            </choice>
+        </element>
         <index name="index">
             <element name="requester"/>
         </index>
